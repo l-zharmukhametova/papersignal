@@ -1,15 +1,13 @@
-# By Kent Quirk, April 2018 SVG writer; outputs lines and text
+# By Kent Quirk, April 2018
+# SVG writer; outputs lines and text
 
-# Although SVG is an XML-based language, XML manipulation is annoyingly
-# complicated for what we need to do here, so we're just going to treat set
-# things up with a template and embed strings.
+# Although SVG is an XML-based language, XML manipulation is annoyingly complicated for what we need
+# to do here, so we're just going to treat set things up with a template and embed strings.
 
-# This system exists generate SVG files -- in particular to use with the
-# Glowforge laser cutter. One thing that makes using the Glowforge UI work
-# better is for SVGs to use closed paths rather than a semi-random selection of
-# lines. Consequently, what this driver does is collect all of the line commands
-# and record them; on the save call it concatenates them together into a set of
-# paths.
+# This system exists generate SVG files -- in particular to use with the Glowforge laser cutter. One thing that
+# makes using the Glowforge UI work better is for SVGs to use closed paths rather than a semi-random selection of
+# lines. Consequently, what this driver does is collect all of the line commands and record them; on the
+# save call it concatenates them together into a set of paths.
 
 from string import Template
 
@@ -26,11 +24,10 @@ ${contents}
 </svg>
 """)
 
-tmpl_path = Template("""        <path
+tmpl_path = Template("""       <path
        id="path7089biglefttop"
        style="fill:#ffd700;stroke:#ff0000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="m 72.657613,117.7977 5.08,-5.08 V 73.637332 l 5.08,5.079999 h 5.667727 l 10.16,-10.159999 V 55.464691 l -5.08,-5.08 -5.08,-5.08 h -5.667727 l -5.08,5.08 V 34.556964 h -51.41983 v 15.827727 l -5.079999,-5.08 h -5.667728 l -10.16,10.16 v 13.092641 l 10.16,10.159999 h 5.667728 l 5.079999,-5.079999 V 112.7177 l 5.08,5.08 z" />
- 
 """)
 
 tmpl_rect = Template("""        <rect x="${x}" y="${y}" width="${w}" height="${h}"/>
@@ -47,7 +44,7 @@ class SVGDoc(object):
         self.paths = []
         self.firsts = set()
         self.filename = filename
-        self.stroke_color = "red"
+        self.stroke_color = "black"
         self.line_width = 0.5  # default is mm so we need to convert
         self.page_size = [0, 0]
         self.author = ''
