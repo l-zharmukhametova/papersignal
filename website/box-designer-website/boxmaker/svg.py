@@ -26,7 +26,7 @@ ${contents}
 </svg>
 """)
 
-tmpl_path = Template("""        <path d="${path}" style="fill:none;stroke:${stroke_color};stroke-width:${stroke_pixels}px;"/>
+tmpl_path = Template("""        <path d="${path}" style="fill:#ffd700;stroke:${stroke_color};stroke-width:${stroke_pixels}px;"/>
 """)
 
 tmpl_rect = Template("""        <rect x="${x}" y="${y}" width="${w}" height="${h}"/>

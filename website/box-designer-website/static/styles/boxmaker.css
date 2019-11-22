@@ -2,12 +2,12 @@
 
 body {
     font-family: 'Gill Sans', Verdana;
-	background-color: #EB8429;
+	background-color: rgb(25, 80, 109);
 }
 
 h1 {
    font-family: times, 'Times New Roman', times-roman, georgia, serif;
-   color: #7B354D;
+   color: rgb(75, 15, 36);
    font-size: 56px;
    font-weight: bold;
    letter-spacing: -1px;
@@ -34,14 +34,14 @@ label {
 }
 
 label.control-label {
-	color: #9F923C;
+	color: rgb(78, 69, 11);
 	text-transform: uppercase; 
 	font-weight: bold;
 }
 
 input[type='text'] {
 	font-weight: bold;
-	color: #EB8429;
+	color: rgb(52, 32, 15);
 }
 
 small {
@@ -61,7 +61,7 @@ small {
 }
 
 .bm-errors {
-    background-color: #C33C10;
+    background-color: rgb(79, 26, 8);
     color: #ffffff;
     margin: 0px 10px;
 	margin-bottom: 15px;
