@@ -27,8 +27,9 @@ def _closest_odd(number):
 
 class Box:
     '''
-    Handles actually drawing of the notched box to a file.  This class passes everything around
-    in millimeters until it actually draws it at the low level.  It renders a files like this:
+    Handles actually drawing of the notched box to a file.  This class passes
+    everything around in millimeters until it actually draws it at the low
+    level.  It renders a files like this:
 
     legend: === (no joint), --- (joint)
 

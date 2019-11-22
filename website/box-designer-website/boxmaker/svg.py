@@ -1,13 +1,15 @@
-# By Kent Quirk, April 2018
-# SVG writer; outputs lines and text
+# By Kent Quirk, April 2018 SVG writer; outputs lines and text
 
-# Although SVG is an XML-based language, XML manipulation is annoyingly complicated for what we need
-# to do here, so we're just going to treat set things up with a template and embed strings.
+# Although SVG is an XML-based language, XML manipulation is annoyingly
+# complicated for what we need to do here, so we're just going to treat set
+# things up with a template and embed strings.
 
-# This system exists generate SVG files -- in particular to use with the Glowforge laser cutter. One thing that
-# makes using the Glowforge UI work better is for SVGs to use closed paths rather than a semi-random selection of
-# lines. Consequently, what this driver does is collect all of the line commands and record them; on the
-# save call it concatenates them together into a set of paths.
+# This system exists generate SVG files -- in particular to use with the
+# Glowforge laser cutter. One thing that makes using the Glowforge UI work
+# better is for SVGs to use closed paths rather than a semi-random selection of
+# lines. Consequently, what this driver does is collect all of the line commands
+# and record them; on the save call it concatenates them together into a set of
+# paths.
 
 from string import Template
 
