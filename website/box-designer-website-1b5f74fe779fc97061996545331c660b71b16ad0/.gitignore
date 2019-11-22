@@ -1,0 +1,16 @@
+*.log
+tmp/boxes/*.pdf
+tmp/boxes/*.dxf
+tmp/boxes/*.svg
+bin
+core
+include
+lib
+public
+*.pyc
+tmp/restart.txt
+tmp/test.pdf
+.idea
+venv
+.vscode
+
