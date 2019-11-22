@@ -41,7 +41,7 @@ class SVGDoc(object):
         self.paths = []
         self.firsts = set()
         self.filename = filename
-        self.stroke_color = "black"
+        self.stroke_color = "red"
         self.line_width = 0.5  # default is mm so we need to convert
         self.page_size = [0, 0]
         self.author = ''
