@@ -249,8 +249,8 @@ class Box:
 
     def _draw_bounding_box(self):
         # render a box around the whole thing to make resizing easier when imports fail in 3rd party tools
-        self._doc.rect(self._margin*mm, self._margin*mm, self._bounding_box_size['w']*mm,
-                       self._bounding_box_size['h']*mm)
+        self._doc.rect(self._margin*mm, self._desired_size['w']*mm, self._desired_size['h']*mm,
+                       self._desired_size['d']*mm)
         self._doc.drawString(15*mm, self._doc_size['h']*mm - 20*mm, "Bounding Box: %.2fmm x %.2fmm" %
                              (self._bounding_box_size['w'], self._bounding_box_size['h']))
 
