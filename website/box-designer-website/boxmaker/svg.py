@@ -29,11 +29,13 @@ tmpl_path = Template("""
 #<path d="${path}" style="fill:#ffd700;stroke:${stroke_color};stroke-width:${stroke_pixels}px;"/>
 #73.637332
 
-tmpl_rect = Template("""       <path
-       id="path7089biglefttop"
-       style="fill:#ffd700;stroke:none;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
-       d="m 72.657613,117.7977 5.08,-5.08 V ${y} l 5.08,5.079999 h 5.667727 l 10.16,-10.159999 V 55.464691 v ${f} l -5.08,-5.08 -5.08,-5.08 h -5.667727 l -5.08,5.08 V 34.556964 h -51.41983 v 15.827727 l -5.079999,-5.08 h -5.667728 l -10.16,10.16 v 13.092641 l 10.16,10.159999 h 5.667728 l 5.079999,-5.079999 V 112.7177 v ${y} l 5.08,5.08 z" />
-""")
+tmpl_rect = Template("""    
+<path
+       style="fill:#ffd700;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 35.075403,35.500069 h 51.419828 v 15.827727 l 5.079998,-5.08 h 5.667727 l 10.160004,10.16 V ${y} L 97.242956,${l} h -5.667727 l -5.079998,-5.079997 v 39.080373 v ${f} l -5.079998,5.08 h -41.25983 l -5.08,-5.08 V ${vlu} l -5.079999,5.079997 h -5.667728 l -10.16,-10.159997 V 56.407796 l 10.16,-10.16 h 5.667728 l 5.079999,5.08 z"
+       id="path3702"
+       />
+   """)
 
 #v ${y}
 #<rect x="${x}" y="${y}" width="${w}" height="${h}"/>
@@ -72,7 +74,13 @@ class SVGDoc(object):
 
     def rect(self, x, y, w, h):
         a = self._sc(x)
-        self.elements.append(tmpl_rect.substitute(dict(f= 20, x=a, y=str(73.637332+float(self._sc(y))), w=self._sc(w), h=self._sc(h))))
+        self.elements.append(tmpl_rect.substitute(dict(
+            f= self._sc(y), 
+            vlu = str(74.580437+float(self._sc(y))),
+            x=a, 
+            l= str(79.660434+float(self._sc(y))),
+            y=str(69.500437 +float(self._sc(y))), 
+            w=self._sc(w), h=self._sc(h))))
 
     def drawClosedPath(self, p):
         s = "M{},{}".format(self._sc(p[0][0]), self._sc(p[0][1]))
