@@ -228,13 +228,14 @@ class Box:
         self._doc_size = {'w': self._box_pieces_size['w']+self._margin*4,
                           'h': self._box_pieces_size['h']+self._margin*5}
         # compute a bounding box size, in case we need to render it
-        self._bounding_box_size = {'w': self._box_pieces_size['w']+self._margin*2,
-                                   'h': self._box_pieces_size['h']+self._margin*3}
+        self._bounding_box_size = {'w': 1000,
+                                   'h': 1000}
 
     def _initialize_document(self):
         # initialize the pdf file (based on layout of pieces)
         self._doc = self._doc_cls(self._file_path)
-        self._doc.setPageSize([self._doc_size['w']*mm, self._doc_size['h']*mm])
+     #   self._doc.setPageSize([self._doc_size['w']*mm, self._doc_size['h']*mm])
+        self._doc.setPageSize([1000, 1000])
         self._doc.setAuthor(boxmaker.APP_NAME+" "+boxmaker.APP_VERSION)
         self._doc.setStrokeColor(black)
         self._doc.setLineWidth(0.1)
@@ -251,8 +252,9 @@ class Box:
         # render a box around the whole thing to make resizing easier when imports fail in 3rd party tools
         self._doc.rect(self._margin*mm, self._desired_size['w']*mm, self._desired_size['h']*mm,
                        self._desired_size['d']*mm)
-        self._doc.drawString(15*mm, self._doc_size['h']*mm - 20*mm, "Bounding Box: %.2fmm x %.2fmm" %
-                             (self._bounding_box_size['w'], self._bounding_box_size['h']))
+     #   self._doc.drawString(15*mm, self._doc_size['h']*mm - 20*mm, "Bounding Box: %.2fmm x %.2fmm" %
+     
+     #                        (self._bounding_box_size['w'], self._bounding_box_size['h']))
 
     def _draw_horizontal_line(self, x0, y0, notch_width, notch_count, notch_height, cut_width, flip, smallside):
         x = x0
