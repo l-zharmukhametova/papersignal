@@ -1,7 +1,7 @@
 *.log
 tmp/boxes/*.pdf
 tmp/boxes/*.dxf
-tmp/boxes/*.svg
+static/icons/*.svg
 bin
 core
 include

@@ -5,7 +5,7 @@ import boxmaker
 app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-BOX_TMP_DIR = os.path.join(BASE_DIR, 'tmp', 'boxes')
+BOX_TMP_DIR = os.path.join(BASE_DIR, 'static', 'icons')
 
 # setup logging
 logging.basicConfig(level=logging.INFO)
@@ -37,11 +37,14 @@ def index():
             for key in measurements:
                 params[key] = float(request.form[key])*conversion
             # and add bounding box option
-            params['bounding_box'] = True if 'bounding_box' in request.form else False
+            params['bounding_box'] = True 
+            # if 'bounding_box' in request.form else False
             # now render it
             logger.info(request.remote_addr + " - " + box_name)
             _render_box(box_name, file_type, params, notched_top)
-            return send_from_directory(BOX_TMP_DIR, box_name, as_attachment=True)
+            bxmkv="static/icons/" + box_name
+            return render_template("home.html", boxmaker_version=boxmaker.APP_VERSION, src=bxmkv)
+            #send_from_directory(BOX_TMP_DIR, box_name, as_attachment=True)
     else:
         return render_template("home.html", boxmaker_version=boxmaker.APP_VERSION)
 

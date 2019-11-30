@@ -30,8 +30,15 @@ tmpl_path = Template("""
 #73.637332
 
 tmpl_rect = Template("""    
+<defs>
+  <pattern id="myPattern"
+           x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
+<!-- start pattern-->
+      <circle cx="10" cy="10" r="7" style="stroke: none; fill: magenta" />
+  </pattern>
+</defs>
 <path
-       style="fill:#ffd700;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:url(#myPattern);stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 35.075403,35.500069 
        h 51.419828 
        h ${w}
@@ -60,6 +67,7 @@ tmpl_rect = Template("""
        />
    """)
 
+#ffd700
 #v ${y}
 #<rect x="${x}" y="${y}" width="${w}" height="${h}"/>
 #${x}
