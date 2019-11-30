@@ -26,12 +26,12 @@ ${contents}
 
 tmpl_path = Template("""      
 """)
-#<path d="${path}" style="fill:#ffd700;stroke:${stroke_color};stroke-width:${stroke_pixels}px;"/>
+#<path d="${path}" style="fill:#ffcfd9 ;stroke:${stroke_color};stroke-width:${stroke_pixels}px;"/>
 #73.637332
 
 tmpl_rect = Template("""    
 <path
-       style="fill:#ffd700;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#ffcfd9 ;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 35.075403,35.500069 
        h 51.419828 
        h ${w}
@@ -73,7 +73,7 @@ tmpl_rect = Template("""
         
    """)
 
-#ffd700
+#ffcfd9 
 #v ${y}
 #<rect x="${x}" y="${y}" width="${w}" height="${h}"/>
 #${x}
