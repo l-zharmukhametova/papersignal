@@ -9,20 +9,18 @@
 		<div class="alert alert-danger" role="alert">Sorry, we couldn't create your box. {{error}}</div>
 	{% endif %}
 
-  	<form method="POST" action="/" class="form-horizontal" role="form">
+ 	<form method="POST" action="/" class="form-horizontal" role="form">
 
-  		<div class="form-group">
+  		<div class="form-group" style="display: none;">
   			<div class="row">
           <label class="col-sm-3 control-label" for="units">Units</label>
   				<div class="col-sm-6">
   	        <select name="units" id="bm-units" class="form-control">
   	        	<option value="in" selected>inches</option>
-  	        	<option value="mm">millimeters</option>
-  	        	<option value="cm">centimeters</option>
   	        </select>
   		    </div>
   			</div>
-  		</div>
+  		</div> 
 
   		<div class="form-group">
   			<div class="row">
@@ -37,7 +35,7 @@
   	    </div>
   		</div>
 
-  		<div class="form-group">
+  		<div class="form-group" style="display: none;">
         <div class="row">
           <label class="col-sm-3 control-label">Material Thickness</label>
   				<div class="col-sm-9">
@@ -48,7 +46,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="display: none;">
         <div class="row">
           <label class="col-sm-3 control-label">File Type</label>
           <div class="col-sm-6">
@@ -61,7 +59,7 @@
         </div>
       </div>
 
-  		<div class="form-group">
+  		<div class="form-group" style="display: none;">
   			<div class="row">
           <div class="col-sm-offset-3 col-sm-9">
       		  [ <a href="#" onClick="$('#bm-create-advanced').slideToggle();return false;">advanced options</a> ]

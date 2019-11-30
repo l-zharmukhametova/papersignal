@@ -30,16 +30,9 @@ tmpl_path = Template("""
 #73.637332
 
 tmpl_rect = Template("""    
-<defs>
-  <pattern id="myPattern"
-           x="10" y="10" width="20" height="20" patternUnits="userSpaceOnUse" >
-<!-- start pattern-->
-      <circle cx="10" cy="10" r="7" style="stroke: none; fill: magenta" />
-  </pattern>
-</defs>
 <path
-       style="fill:url(#myPattern);stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 35.075403,35.500069 
+       style="fill:#ffd700;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 35.075403,35.500069 
        h 51.419828 
        h ${w}
        v 15.827727 
@@ -65,6 +58,19 @@ tmpl_rect = Template("""
        l 5.079999,5.08 z"
        id="path3702"
        />
+    <path
+         id="path126"
+         d="M 20.317748,52.384656 h 81.419828 h ${w} V ${y} v 5 h ${wh} h -30 L 20.317748,52.384656"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+    <path
+         id="path126"
+         d="M 35.317748,${yh} h 51.419828 h ${w}"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+    <path
+         id="path126"
+         d="M 35.317748,${yhh} h 51.419828 h ${w}"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+        
    """)
 
 #ffd700
@@ -107,6 +113,9 @@ class SVGDoc(object):
         a = self._sc(x)
         self.elements.append(tmpl_rect.substitute(dict(
             ww=str(-float(self._sc(w))),
+            yh=str(20.827727+69.500437 +float(self._sc(y))),
+            yhh=str(113+float(self._sc(y))+float(self._sc(y))),
+            wh=str(-51.419828-float(self._sc(w))),
             f= self._sc(y), 
             vlu = str(74.580437+float(self._sc(y))),
             x=a, 

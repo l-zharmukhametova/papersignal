@@ -22,17 +22,13 @@ def index():
             logger.debug("Errors: "+error_str)
             return render_template('home.html', error=error_str)
         else:
-            file_type = request.form['file_type']
+            file_type = "svg"
             notched_top = request.form['notched_top'] == '1'
             box_name = _box_name(file_type)
             logger.debug('Creating box '+box_name+"...")
             # convert it to millimeters
             measurements = ['width', 'height', 'depth', 'material_thickness', 'cut_width', 'notch_length']
             conversion = 1.0
-            if request.form['units'] == 'in':
-                conversion = 25.4
-            elif request.form['units'] == 'cm':
-                conversion = 10.0
             params = {}
             for key in measurements:
                 params[key] = float(request.form[key])*conversion

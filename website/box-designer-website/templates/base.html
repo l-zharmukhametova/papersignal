@@ -4,6 +4,12 @@
 
   <head>
 
+    <style>
+      .center {
+        text-align: center;
+        border: 3px solid darkslategrey;
+      }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Create parametrized designs for boxes you can laser cut">
@@ -46,17 +52,6 @@
           </p>
           <br />
           <br />
-          <!-- <p>
-            <i>
-            email: rahul [ at ] connectionlab [ dot ] org
-            <br />
-            a <a href="http://rahul.connectionlab.org/">Connection Lab</a> project since 2002
-            <br />
-            twitter: <a href="http://twitter.com/rahulbot">@rahulbot</a>
-            <br />
-            version {{boxmaker_version}}
-            </i>
-          </p> -->
           <br />
           <div id="bm-flickr-pool">
             <!-- <p>
@@ -69,15 +64,15 @@
           {{ content |safe }}
           {% endblock %}
         </div>
-      </div>
 
+    <div class="center"> <img src={{src}} alt="Template"/> </div>
+      </div>
     </div>
 
   <!--  <a href="http://github.com/rahulbot/boxmaker-website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
-  <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
-  <img src="static/icons/cat.jpg" />
-  <img src="static/icons/box-20191130_001322_244837.svg" />
-  <img src={{src}}/>
+  <!-- <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" /> -->
+  <!-- <img src="static/icons/cat.jpg" /> -->
+  <!-- <img src="static/icons/box-20191130_001322_244837.svg" /> -->
   </body>
 
   <script>
