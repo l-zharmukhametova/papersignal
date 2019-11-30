@@ -143,27 +143,29 @@ tmpl_rect = Template("""
 
        stroke-dasharray:2, 1;
        stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 241.05511,72.018055 V 190.35518 h 68.74827 V 71.763784"
+       d="M ${dff},72.018055 V 190.35518 h 68.74827 h ${w} V 71.763784"
        id="path461"
        /><path
        style="fill:none;stroke:#000000;
        
        stroke-dasharray:2, 1;
        stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 240.79368,190.41647 v 40.35751"
+       d="m ${bbf},190.41647 v 40.35751 v ${f}"
        id="path463"
        /><path
        style="fill:none;stroke:#000000;
        
        stroke-dasharray:2, 1;
        stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 309.80338,190.35518 v 13.1028"
+       d="m ${bbbf},190.35518 v 13.1028 v ${fdt} "
        id="path465"
-       /><path
+       />
+       
+       <path
        style="fill:none;stroke:#000000;
        stroke-dasharray:2, 1;
        stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 309.64272,217.13317 v 13.86288"
+       d="m ${bbbf},${stlt} v 13.86288 v ${fdt}"
        id="path467"/>
    """)
 
@@ -206,6 +208,10 @@ class SVGDoc(object):
     def rect(self, x, y, w, h):
         a = self._sc(x)
         self.elements.append(tmpl_rect.substitute(dict(
+            stlt=str(217.13317+float(self._sc(y))/2), 
+            bbf=str(240.79368+float(self._sc(y))),
+            bbbf=str(309.80338+float(self._sc(w))+float(self._sc(y))),
+            dff=str(241.05511+float(self._sc(y))),
             hhd=str(350.00009 +2* (float(self._sc(y)))+ float(self._sc(w))),
             hhhd=str(417.95696 + 2*(float(self._sc(y)))+ 2*float(self._sc(w))),
             nw=str(-float(self._sc(w))),
