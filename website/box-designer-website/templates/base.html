@@ -6,11 +6,11 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="Create designs for boxes you can laser cut">
+    <meta name="description" content="Create parametrized designs for boxes you can laser cut">
     <meta name="keywords" content="box, laser cutter, cad">
-    <meta name="author" content="Rahul Bhargava - Connection Lab, LLC">
+    <meta name="author" content="CS279R group">
 
-    <title>{% block page_title %}Box Designer{% endblock %}</title>
+    <title>{% block page_title %}PaperSignals Parametrized{% endblock %}</title>
 
     <link rel="stylesheet" href="/static/styles/bootstrap.min.css" type="text/css" charset="utf-8" />
     <!-- <link rel="stylesheet" href="/static/styles/bootstrap-theme.min.css" type="text/css" charset="utf-8" /> -->
@@ -33,18 +33,20 @@
   <body>
 
     <div class="container">
-      
+
       <div class="row">
         <div class="col-md-4">
-          <h1>Box Designer</h1>
+          <h1>PaperSignals Parametrized</h1>
           <p>
-            Give us dimensions and we'll generate a PDF you can use to cut a notched 
-            box on a laser-cutter. Check out this <a href="/static/files/example-box.pdf">example box design</a>.  
-            More than 500,000 people have used this website since 2010!
+            Building off of a simple box design interface by rahul at connectionlab, this tool allows you to input parameter dimensions
+            and output a pdf. This is the first iteration which takes the microcontroller from the PaperSignals umbrella template, converts it to a svg
+            instead of a pdf, and reshapes it based on the dimensions given by the user. This demonstrates that Papersignals templates can be Parametrized
+            and therefore improved.
+
           </p>
           <br />
-          <p>
-            Use this box designer a lot?  Consider chipping in some money to support our hosting and bug fixes!
+          <!-- <p>
+            Use this tool a lot?  Consider chipping in some money to support our hosting and bug fixes!
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_donations">
               <input type="hidden" name="business" value="rahulb@yahoo.com">
@@ -57,9 +59,9 @@
               <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
               <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
-          </p>
+          </p> -->
           <br />
-          <p>
+          <!-- <p>
             <i>
             email: rahul [ at ] connectionlab [ dot ] org
             <br />
@@ -69,12 +71,12 @@
             <br />
             version {{boxmaker_version}}
             </i>
-          </p>
-          <br />          
+          </p> -->
+          <br />
           <div id="bm-flickr-pool">
-            <p>
+            <!-- <p>
             Add your picture to the <a href="http://www.flickr.com/groups/boxmaker/">flickr pool</a>!
-            </p>
+            </p> -->
           </div>
         </div>
         <div class="col-md-8">
