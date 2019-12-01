@@ -2,15 +2,14 @@
 
 {% block content %}
 
-<div id="bm-create-form" class="body">
 
 
-	{% if error %}
-		<div class="alert alert-danger" role="alert">Sorry, we couldn't create your box. {{error}}</div>
-	{% endif %}
+  {% if error %}
+  <div class="alert alert-danger" role="alert">Sorry, we couldn't create your box. {{error}}</div>
+  {% endif %}
 
- 	<form method="POST" action="/" class="form-horizontal" role="form">
-
+  <form method="POST" action="/" class="form-horizontal" role="form">
+    <!-- BEGIN REMOVED UNECESSARY PARAMETERS-->
   		<div class="form-group" style="display: none;">
   			<div class="row">
           <label class="col-sm-3 control-label" for="units">Units</label>
@@ -22,29 +21,6 @@
   			</div>
   		</div> 
 
-  		<div class="form-group">
-  			<div class="row">
-  				<label class="col-sm-3 control-label"><font size="3" color="black">Dimensions</font></label>
-                <div class="col-sm-9"> 
-                    <input class="form-control" type="text" id="width"
-                                                            name="width"
-                                                            value="{{request.form['width']
-                                                            }}"/> 
-                    x 
-                   <input class="form-control" type="text" id="depth"
-                                                           name="depth"
-                                                           value="{{request.form['depth']
-                                                           }}"/> 
-                    x 
-                   <input class="form-control" type="text" id="height"
-                                                           name="height"
-                                                           value="{{request.form['height']
-                                                           }}"/> 
-  					&nbsp;
-  					<span class="glyphicon glyphicon-question-sign bm-btn-popover" data-toggle="popover" data-content="The width x depth x height of your box (outer dimension)."></span>
-  				</div>
-  	 
-  		</div>
 
   		<div class="form-group" style="display: none;">
         <div class="row">
@@ -144,20 +120,52 @@
 
       </div>
 
-  		<div class="form-group">
-  			<div class="row">
-          <div class="col-sm-offset-3 col-sm-9">
-			  <br />
-			  <br />
-  				  <button type="submit" class="button"><font size="3" color="white">DESIGN IT!</font></button>
-  				</div>
-  			</div>
-  		</div>
+    <!-- END REMOVED UNECESSARY PARAMETERS-->
+    <div id="bm-create-form" class="panel panel-default">
 
-  	</form>
+      <div class="panel-body">
 
-	</div>
+        <div class="form-group" >
+          <div class="row">
+            <label class="col-sm-3 control-label"><font size="3" color="black">Dimensions</font></label>
+            <div class="col-sm-9"> 
+              <input class="form-control" type="text" id="width"
+                                                      name="width"
+                                                      value="{{request.form['width']
+                                                      }}"/> 
+              x 
+              <input class="form-control" type="text" id="depth"
+                                                      name="depth"
+                                                      value="{{request.form['depth']
+                                                      }}"/> 
+              x 
+              <input class="form-control" type="text" id="height"
+                                                      name="height"
+                                                      value="{{request.form['height']
+                                                      }}"/> 
+              &nbsp;
+              <span class="glyphicon glyphicon-question-sign bm-btn-popover" data-toggle="popover" data-content="The width x depth x height of your box (outer dimension)."></span>
+            </div>
+          </div>
+        </div>
 
-</div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-9">
+              <br />
+              <br />
+              <button type="submit" class="button">
+                <font size="3" color="white">DESIGN IT!</font></button> 
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+
+
 
 {% endblock %}

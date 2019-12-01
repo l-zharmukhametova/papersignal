@@ -78,4 +78,5 @@ def _numeric_errors(string, name):
 
 if __name__ == "__main__":
     app.debug = False
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run()
