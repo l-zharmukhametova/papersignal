@@ -31,7 +31,7 @@ tmpl_path = Template("""
 
 tmpl_rect = Template("""    
 <path
-       style="fill:#ffcfd9 ;stroke:#ff0000;stroke-width:0.75px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#ffcfd9 ;stroke:#ff0000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 35.075403,35.500069 
        h 51.419828 
        h ${w}
@@ -61,16 +61,112 @@ tmpl_rect = Template("""
     <path
          id="path126"
          d="M 20.317748,52.384656 h 81.419828 h ${w} V ${y} v 5 h ${wh} h -30 L 20.317748,52.384656"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+         style="fill:none;stroke:#000000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
     <path
          id="path126"
          d="M 35.317748,${yh} h 51.419828 h ${w}"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+         style="fill:none;stroke:#000000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
     <path
          id="path126"
          d="M 35.317748,${yhh} h 51.419828 h ${w}"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
-        
+         style="fill:none;stroke:#000000;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:2, 1;stroke-opacity:1" />
+       
+       
+
+
+
+
+
+      <path
+       style="fill:#ffcfd9;
+       stroke:#ff0000;
+
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 200.50192,72.018055 
+       V 190.41647 
+       h ${f} 
+       h 40.29176 
+       l -8.1549,8.1549 
+       v 23.84754 
+       v ${f} 
+       l 8.1549,8.35507 
+       h 68.67658 
+       h ${w}
+       l 8.68944,-8.33998 
+       v -5.54011 
+       v ${nf}
+       h -8.5784 
+       v -13.21383 
+       h 8.32805 
+       v -5.10787 
+       v ${nf}
+       l -7.92239,-8.15436 
+       h 12.90713 
+       h ${fdt} 
+       v -10.70726 
+       h 13.97417 
+       v 10.70929 
+       h 13.17392 
+       h ${fdt} 
+       l 8.41951,8.41951 
+       v 0 h 51.62438 
+       h ${w}
+       l 16.9511,-16.9511 
+       V 80.609115 
+       L ${hhw},63.661556 
+       h -51.62168 
+       h ${nw}
+       l -8.46784,8.324309 -8.24794,-8.324309 
+       h -23.85304 
+       h ${ndf} 
+       l -8.09573,8.102228 
+       V 31.567073 
+       h -68.84519 
+       h ${nw}
+       v 40.307751 
+       l -8.09312,-8.214645 
+       h -23.83931 
+       h ${ndf}
+       z"
+       id="path470bigpath"
+       />
+
+       <path
+       style="fill:none;stroke:#000000;
+       
+       stroke-dasharray:2, 1;
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 200.53679,71.99401 H ${hhhd} V 190.1331 H ${hhd} V 71.985865"
+       id="path459"
+       /><path
+       style="fill:none;stroke:#000000;
+
+       stroke-dasharray:2, 1;
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M ${dff},72.018055 V 190.35518 h 68.74827 h ${w} V 71.763784"
+       id="path461"
+       /><path
+       style="fill:none;stroke:#000000;
+       
+       stroke-dasharray:2, 1;
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m ${bbf},190.41647 v 40.35751 v ${f}"
+       id="path463"
+       /><path
+       style="fill:none;stroke:#000000;
+       
+       stroke-dasharray:2, 1;
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m ${bbbf},190.35518 v 13.1028 v ${fdt} "
+       id="path465"
+       />
+       
+       <path
+       style="fill:none;stroke:#000000;
+       stroke-dasharray:2, 1;
+       stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m ${bbbf},${stlt} v 13.86288 v ${fdt}"
+       id="path467"/>
    """)
 
 #ffcfd9 
@@ -112,6 +208,17 @@ class SVGDoc(object):
     def rect(self, x, y, w, h):
         a = self._sc(x)
         self.elements.append(tmpl_rect.substitute(dict(
+            stlt=str(217.13317+float(self._sc(y))/2), 
+            bbf=str(240.79368+float(self._sc(y))),
+            bbbf=str(309.80338+float(self._sc(w))+float(self._sc(y))),
+            dff=str(241.05511+float(self._sc(y))),
+            hhd=str(350.00009 +2* (float(self._sc(y)))+ float(self._sc(w))),
+            hhhd=str(417.95696 + 2*(float(self._sc(y)))+ 2*float(self._sc(w))),
+            nw=str(-float(self._sc(w))),
+            hhw=str(410.08961+2*float(self._sc(w))+2*float(self._sc(y))),
+            nf=str(-float(self._sc(y))/2),
+            ndf=str(-float(self._sc(y))),
+            fdt=str(float(self._sc(y))/2),
             ww=str(-float(self._sc(w))),
             yh=str(20.827727+69.500437 +float(self._sc(y))),
             yhh=str(113+float(self._sc(y))+float(self._sc(y))),
