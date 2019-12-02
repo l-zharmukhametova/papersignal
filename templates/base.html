@@ -77,41 +77,51 @@
         <div class="container" id="content-box">
 
             <div class="row">
-                <h1><font size="10" color="black">PaperSignals Parametrized</font></h1>
-                <p>
-                    <font size="5" color="black">Building off of a simple box design interface by rahul at connectionlab, this tool allows you to input parameter dimensions
-                        and output a custom papersignal template. This is the first iteration which takes the microcontroller from the PaperSignals umbrella template, converts it to a svg, and reshapes it based on the dimensions given by the user. This demonstrates that Papersignals templates can be Parametrized
-                        and therefore improved.</font>
-                </p>
-                <div class="row">
-                {% if src %}
-                          <img src="static/icons/labels.png" alt="Labels"
-                          style="max-width:500px;max-height:500px;margin:-1% 10%
-                          -30% 5%"/> 
-                        {% endif %}
-                    </div>
+                <div class="col-md-6">
+                    <h1><font size="10" color="black">PaperSignals Parametrized</font></h1>
+                    <p>
+                        <font size="5" color="black">Building off of a simple box design interface by rahul at connectionlab, this tool allows you to input parameter dimensions
+                            and output a custom papersignal template. This is the
+                            first iteration which takes the microcontroller from the
+                            PaperSignals umbrella template, converts it to a svg,
+                            and reshapes it based on the dimensions given by the
+                            user. This demonstrates that Papersignals templates can
+                            be Parameratized and therefore improved.</font>
+                    </p>
+                </div> 
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="static/icons/labels.png" alt="Labels"
+                                                       style="max-width:500px;max-height:500px;margin:-1% 10%
+                                                       -30% 5%"/> 
+                </div> 
+                <div class="col-md-6">
+                    <img src="static/files/mcu_labelled.jpg" alt="mcu"
+                                                             style="max-width:50%"/> 
+                </div> 
+                </div> 
                 <br />
                 <br />
                 <br />
                 <br />
-                 </div> 
-                <div class="row">
-                    <div class="col-md-8">
+            </div> 
+            <div class="row">
+                <div class="col-md-8">
                     {% block content %}
                     {{ content |safe }}
                     {% endblock %}
-                    </div>
                 </div>
-
-    
-                <div class="row"> 
-                    {% if src %}
-                      <img src={{src}} alt="Template"
-                      style="max-width:1250px;max-height:3000px;margin:5% 10%
-                      -30% 5%"/> 
-                    {% endif %}
-                  </div>
             </div>
+
+
+            <div class="row"> 
+                {% if src %}
+                <img src={{src}} alt="Template"
+                                 style="max-width:1250px;max-height:3000px;margin:5% 10%
+                                 -30% 5%"/> 
+                {% endif %}
+            </div>
+        </div>
 
         </div>
 
