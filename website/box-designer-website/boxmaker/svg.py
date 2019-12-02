@@ -74,9 +74,7 @@ tmpl_rect = Template("""
        
 
 
-
-
-
+<g transform="translate(0.0,100.0)">
       <path
        style="fill:#ffcfd9;
        stroke:#ff0000;
@@ -120,10 +118,11 @@ tmpl_rect = Template("""
        h -23.85304 
        h ${ndf} 
        l -8.09573,8.102228 
-       V 31.567073 
+       V ${vll} 
        h -68.84519 
        h ${nw}
        v 40.307751 
+       v ${f}
        l -8.09312,-8.214645 
        h -23.83931 
        h ${ndf}
@@ -167,6 +166,7 @@ tmpl_rect = Template("""
        stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m ${bbbf},${stlt} v 13.86288 v ${fdt}"
        id="path467"/>
+       </g>
    """)
 
 #ffcfd9 
@@ -208,6 +208,7 @@ class SVGDoc(object):
     def rect(self, x, y, w, h):
         a = self._sc(x)
         self.elements.append(tmpl_rect.substitute(dict(
+            vll=str(31.567073-float(self._sc(y))),
             stlt=str(217.13317+float(self._sc(y))/2), 
             bbf=str(240.79368+float(self._sc(y))),
             bbbf=str(309.80338+float(self._sc(w))+float(self._sc(y))),

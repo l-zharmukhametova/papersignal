@@ -83,6 +83,16 @@
                         and output a custom papersignal template. This is the first iteration which takes the microcontroller from the PaperSignals umbrella template, converts it to a svg, and reshapes it based on the dimensions given by the user. This demonstrates that Papersignals templates can be Parametrized
                         and therefore improved.</font>
                 </p>
+                <div class="row">
+                {% if src %}
+                          <img src="static/icons/labels.png" alt="Labels"
+                          style="max-width:500px;max-height:500px;margin:-1% 10%
+                          -30% 5%"/> 
+                        {% endif %}
+                    </div>
+                <br />
+                <br />
+                <br />
                 <br />
                  </div> 
                 <div class="row">
@@ -93,13 +103,14 @@
                     </div>
                 </div>
 
+    
                 <div class="row"> 
-                  {% if src %}
-                    <img src={{src}} alt="Template"
-                    style="max-width:1250px;max-height:1500px;margin:5% 10%
-                    -30% 5%"/> 
-                  {% endif %}
-                </div>
+                    {% if src %}
+                      <img src={{src}} alt="Template"
+                      style="max-width:1250px;max-height:3000px;margin:5% 10%
+                      -30% 5%"/> 
+                    {% endif %}
+                  </div>
             </div>
 
         </div>
