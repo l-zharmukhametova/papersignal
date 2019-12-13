@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <style>
+.button {
+    background-color: #5b2525;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.9;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Merienda Font';
+}
+
+          .button:hover {opacity: 1}
+        </style>
+        <style>
+.center {
+    text-align: center;
+}
+        </style>
+        <style>
+.body {
+
+    background-image: url("/static/files/flow.jpg");
+    background-repeat:repeat;
+    background-size:500px ;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    font-family: 'Georgia Font';
+    filter: brightness(97%);
+    text-shadow: 1px 1px #e4d8d8;
+} 
+
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="Create parametrized designs for boxes you can laser cut">
+        <meta name="keywords" content="box, laser cutter, cad">
+        <meta name="author" content="CS279R group">
+
+        <title>{% block page_title %}PaperSignals Parametrized{% endblock %}</title>
+
+        <link rel="stylesheet" href="/static/styles/bootstrap.min.css" type="text/css" charset="utf-8" />
+        <!-- <link rel="stylesheet" href="/static/styles/bootstrap-theme.min.css" type="text/css" charset="utf-8" /> -->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="/static/styles/boxmaker.css" type="text/css" charset="utf-8" />
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/icons/apple-touch-icon-144-precomposed.png">
+        <link rel="Shortcut Icon" href="/static/icons/favicon.ico" type="image/x-icon">
+
+        <script src="/static/scripts/jquery-2.1.1.min.js"></script>
+        <script src="/static/scripts/bootstrap.min.js"></script>
+        <script src="/static/scripts/boxmaker.js"></script>
+
+    </head>
+
+    <body class="body">
+
+        <div class="container" id="content-box">
+
+            <div class="row">
+                <h1><font size="10" color="black">PaperSignals Parametrized</font></h1>
+                <p>
+                    <font size="5" color="black">Building off of a simple box design interface by rahul at connectionlab, this tool allows you to input parameter dimensions
+                        and output a custom papersignal template. This is the first iteration which takes the microcontroller from the PaperSignals umbrella template, converts it to a svg, and reshapes it based on the dimensions given by the user. This demonstrates that Papersignals templates can be Parametrized
+                        and therefore improved.</font>
+                </p>
+                <div class="row">
+                {% if src %}
+                          <img src="static/icons/labels.png" alt="Labels"
+                          style="max-width:500px;max-height:500px;margin:-1% 10%
+                          -30% 5%"/> 
+                        {% endif %}
+                    </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                 </div> 
+                <div class="row">
+                    <div class="col-md-8">
+                    {% block content %}
+                    {{ content |safe }}
+                    {% endblock %}
+                    </div>
+                </div>
+
+    
+                <div class="row"> 
+                    {% if src %}
+                      <img src={{src}} alt="Template"
+                      style="max-width:1250px;max-height:3000px;margin:5% 10%
+                      -30% 5%"/> 
+                    {% endif %}
+                  </div>
+            </div>
+
+        </div>
+
+  <!-- style="width:2500px;height:3000px;margin: -300px 0 0 200px;" -->
+  <!--  <a href="http://github.com/rahulbot/boxmaker-website"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
+  <!-- <img src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" /> -->
+  <!-- <img src="static/icons/cat.jpg" /> -->
+  <!-- <img src="static/icons/box-20191130_001322_244837.svg" /> -->
+  </body>
+
+  <script>
+  $(function(){
+    BoxMaker.init();
+  });
+  </script>
+  <script>
+  {% block page_scripts %}{% endblock %}
+  </script>
+
+</html>
