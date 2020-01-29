@@ -15,4 +15,5 @@ try to cut it multiple times -- so we recreated / traced the lines manually)
 
 ESP8266 code in Hardware/ESP Programs, was having wifi / router issues at home,
 and doesn't work on enterprise security (e.g. `eduroam` or `Harvard Secure`).
-Used router (known to work with ESPs) from friend (not sure what settings changed) and connected fine. Also works on cellphone tethering internet.
+Used router (known to work with ESPs) from friend (not sure what settings
+changed) and connected fine. Also works on cellphone tethering internet.
