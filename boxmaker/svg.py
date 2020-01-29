@@ -207,30 +207,32 @@ class SVGDoc(object):
 
     def rect(self, x, y, w, h):
         a = self._sc(x)
+        yyyy = float(self._sc(y))
+        wwww = float(self._sc(w))
         self.elements.append(tmpl_rect.substitute(dict(
-            vll=str(31.567073-float(self._sc(y))),
-            stlt=str(217.13317+float(self._sc(y))/2), 
-            bbf=str(240.79368+float(self._sc(y))),
-            bbbf=str(309.80338+float(self._sc(w))+float(self._sc(y))),
-            dff=str(241.05511+float(self._sc(y))),
-            hhd=str(350.00009 +2* (float(self._sc(y)))+ float(self._sc(w))),
-            hhhd=str(417.95696 + 2*(float(self._sc(y)))+ 2*float(self._sc(w))),
-            nw=str(-float(self._sc(w))),
-            hhw=str(410.08961+2*float(self._sc(w))+2*float(self._sc(y))),
-            nf=str(-float(self._sc(y))/2),
-            ndf=str(-float(self._sc(y))),
-            fdt=str(float(self._sc(y))/2),
-            ww=str(-float(self._sc(w))),
-            yh=str(20.827727+69.500437 +float(self._sc(y))),
-            yhh=str(113+float(self._sc(y))+float(self._sc(y))),
-            wh=str(-51.419828-float(self._sc(w))),
+            vll=str(31.567073-(yyyy)),
+            stlt=str(217.13317+(yyyy)/2), 
+            bbf=str(240.79368+(yyyy)),
+            bbbf=str(309.80338+(wwww)+(yyyy)),
+            dff=str(241.05511+(yyyy)),
+            hhd=str(350.00009 +2* ((yyyy))+ (wwww)),
+            hhhd=str(417.95696 + 2*((yyyy))+ 2*(wwww)),
+            nw=str(-(wwww)),
+            hhw=str(410.08961+2*(wwww)+2*(yyyy)),
+            nf=str(-(yyyy)/2),
+            ndf=str(-(yyyy)),
+            fdt=str((yyyy)/2),
+            ww=str(-(wwww)),
+            yh=str(20.827727+69.500437 +(yyyy)),
+            yhh=str(113+(yyyy)+(yyyy)),
+            wh=str(-51.419828-(wwww)),
             f= self._sc(y), 
-            vlu = str(74.580437+float(self._sc(y))),
+            vlu = str(74.580437+(yyyy)),
             x=a, 
-            l= str(79.660434+float(self._sc(y))),
-            y=str(69.500437 +float(self._sc(y))), 
+            l= str(79.660434+(yyyy)),
+            y=str(69.500437 +(yyyy)), 
             w=self._sc(w), h=self._sc(h)),
-            p=str(97.242956+float(self._sc(w)))))
+            p=str(97.242956+(wwww))))
 
     def drawClosedPath(self, p):
         s = "M{},{}".format(self._sc(p[0][0]), self._sc(p[0][1]))
